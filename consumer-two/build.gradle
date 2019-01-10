@@ -1,0 +1,13 @@
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+bootJar {
+    baseName = 'consumer-two'
+    version = '0.0.1-SNAPSHOT'
+}
+
+dependencies {
+    compile('org.springframework.boot:spring-boot-starter-actuator')
+    compile project(':config')
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+}

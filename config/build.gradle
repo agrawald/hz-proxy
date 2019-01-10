@@ -1,0 +1,18 @@
+jar {
+    baseName = 'config'
+    version = '0.0.1-SNAPSHOT'
+}
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter:${springBootVersion}")
+    compile("com.hazelcast:hazelcast:3.11")
+    compileOnly("org.projectlombok:lombok:1.16.8")
+    compile("com.jayway.jsonpath:json-path:2.2.0")
+    // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.9.8'
+    testCompile("org.springframework.boot:spring-boot-starter-test:${springBootVersion}")
+}
+
+dependencyManagement {
+    imports { mavenBom("org.springframework.boot:spring-boot-dependencies:${springBootVersion}") }
+}

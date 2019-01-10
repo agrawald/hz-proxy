@@ -1,0 +1,23 @@
+buildscript {
+    ext { springBootVersion = '2.0.5.RELEASE' }
+    repositories { mavenCentral() }
+    dependencies { classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}") }
+}
+
+plugins {
+    id "io.spring.dependency-management" version "1.0.5.RELEASE"
+}
+
+allprojects {
+    apply plugin: 'java'
+    apply plugin: 'eclipse'
+
+    sourceCompatibility = 1.8
+    ext { springBootVersion = '2.0.5.RELEASE' }
+
+    repositories { mavenCentral() }
+
+    dependencies {
+        compileOnly("org.projectlombok:lombok:1.16.8")
+    }
+}
